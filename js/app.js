@@ -29,7 +29,7 @@ function checkForDraw() {
     return !$(box).text();
   });
   if (empty_boxes.length === 0) {
-    alert('It was a draw!');
+    alert('It\'s a draw! Game over!');
     playAgain();
     resetBoard();
   }
@@ -41,7 +41,7 @@ function playAgain() {
     player = prompt('Do you want to play as X or O?');
     choosePlayer();
   } else {
-    alert('Bummer!');
+    alert('We will miss you!');
   }
 }
 
@@ -51,6 +51,7 @@ function resetBoard() {
 
 
 function evaluateWinner() {
+  // lists all winning combinations... should replace with a more efficient way to do this at a later time.
   var $box0 = $box[0].innerText;
   var $box1 = $box[1].innerText;
   var $box2 = $box[2].innerText;
@@ -69,7 +70,7 @@ function evaluateWinner() {
     ($box0 === 'X' && $box3 === 'X' && $box6 === 'X') ||
     ($box1 === 'X' && $box4 === 'X' && $box7 === 'X') ||
     ($box2 === 'X' && $box5 === 'X' && $box8 === 'X')) {
-      alert('X wins!');
+      alert('X wins! Game over!');
       resetBoard();
       playAgain();
   } else if (
@@ -81,7 +82,7 @@ function evaluateWinner() {
     ($box0 === 'O' && $box3 === 'O' && $box6 === 'O') ||
     ($box1 === 'O' && $box4 === 'O' && $box7 === 'O') ||
     ($box2 === 'O' && $box5 === 'O' && $box8 === 'O')) {
-    alert('O wins!');
+    alert('O wins! Game over!');
     resetBoard();
     playAgain();
   }
@@ -99,5 +100,11 @@ function evaluateWinner() {
     evaluateWinner();
   });
 
+
+  $('button').on('click', function restart()  {
+    resetBoard();
+    player = prompt('Do you want to play as X or O?');
+    choosePlayer();
+  });
 
  });
