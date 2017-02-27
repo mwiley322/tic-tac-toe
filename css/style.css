@@ -5,4 +5,17 @@
 .box {
   border: 1px solid black;
   height: 150px;
+  text-align: center;
+  line-height: 150px;
+  font-size: 3em;
+}
+
+.X {
+  color: pink;
+  background-color: hotpink;
+}
+
+.O {
+  color: lightblue;
+  background-color: blue;
 }
