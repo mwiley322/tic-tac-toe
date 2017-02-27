@@ -24,6 +24,7 @@ h1 {
   background: url('http://img08.deviantart.net/b5aa/i/2015/140/7/c/chalkboard_by_lorelinde-d8u2phm.jpg');
   padding: 0 !important;
   border: 9px solid #654917;
+  box-shadow: 2px 2px 2px #3f3e3d;
 }
 
 
@@ -34,6 +35,10 @@ h1 {
   text-align: center;
   line-height: 150px;
   font-size: 3em;
+}
+
+.col-xs-3 {
+  text-align: center; 
 }
 
 .X {
